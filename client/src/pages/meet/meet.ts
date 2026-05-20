@@ -7,11 +7,8 @@ import "@/components/c-anh-to_bot";
 
 export const meetPage: Page = () => {
   return {
-    html: html.replaceAll(
-      "{{VITE_TGBOT_MEET_URL}}",
-      import.meta.env.VITE_TGBOT_MEET_URL,
-    ),
-    init() {},
+    html: html,
+    init() { },
     title: "Встреча",
   };
 };
