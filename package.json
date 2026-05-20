@@ -1,0 +1,27 @@
+{
+  "name": "meditation.uz",
+  "version": "0.8.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnandaUz/meditation_uz.git"
+  },
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "tsx": "^4.20.5",
+    "typescript": "^6.0.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.34.8"
+  }
+}
