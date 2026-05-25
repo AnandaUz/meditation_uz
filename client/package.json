@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "npx vite",
     "build": "tsc && npx vite build",
-    "build:client": "npm run build",
     "preview": "npx vite preview"
   },
   "devDependencies": {
@@ -15,8 +14,7 @@
     "typescript": "^6.0.2",
     "vite": "^7.3.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.34.8"
   }

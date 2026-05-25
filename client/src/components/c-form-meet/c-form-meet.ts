@@ -52,13 +52,13 @@ export class CFormMeet extends HTMLElement {
         userContact?.classList.remove("error");
 
         //- отправка события в Pixel
-        if (typeof window.fbq === "function") {
-          fbq("track", "Lead", {
-            value: 1.0,
-            currency: "USD",
-            content_name: "meet_form",
-          });
-        }
+        // if (typeof window.fbq === "function") {
+        //   fbq("track", "Lead", {
+        //     value: 1.0,
+        //     currency: "USD",
+        //     content_name: "meet_form",
+        //   });
+        // }
         // const fbp = getCookie("_fbp");
         // const fbc = getCookie("_fbc");
         // const userID = localStorage.getItem("good_visiter") || "";
