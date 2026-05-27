@@ -8,10 +8,10 @@ const routes: Routes = {
     import("./pages/admin/admin").then((m) => m.adminPage(params)),
   "/privacy-policy": (params) =>
     import("./pages/privacy-policy").then((m) => m.privacyPolicyPage(params)),
-  "/meditation": (params) =>
-    import("@pages/meditation/meditation").then((m) =>
-      m.meditationPage(params),
-    ),
+  // "/meditation": (params) =>
+  //   import("@/pages/home/home").then((m) =>
+  //     m.meditationPage(params),
+  //   ),
   "/location": (params) =>
     import("@pages/location/location").then((m) => m.locationPage(params)),
 };
@@ -57,7 +57,7 @@ export async function render(): Promise<void> {
     const result = await page(params);
     const { html, title, init, pageClass } = result;
     main.innerHTML = html;
-    document.title = "Ананда" + (title ? " | " + title : " Шадрин");
+    document.title = "Медитация" + (title ? " | " + title : " в Ташкенте");
     init?.();
     document.body.className = "";
     if (pageClass) {

@@ -1,11 +1,11 @@
 @use "@/styles/breakpoints";
 
 c-v-player {
-  // ─── Переменные ─────────────────────────────────────────
-  --vp-preview-height: 120px;
+
+  --vp-preview-height: 182px;
   --vp-transition-expand: 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 
-  // ─── Блок ───────────────────────────────────────────────
+
   display: flex;
   // align-items: center;
   flex-direction: column;
@@ -77,6 +77,6 @@ c-v-player {
 
   // ─── Адаптив ────────────────────────────────────────────
   @include breakpoints.tablet {
-    --vp-preview-height: 134px;
+    --vp-preview-height: 218px;
   }
 }

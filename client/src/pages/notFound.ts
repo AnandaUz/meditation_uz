@@ -1,5 +1,5 @@
-import type { Page } from '../types';
-import '@components/top/c-top';
+import type { Page } from "../types";
+import "@/components/c-top/c-top";
 
 export const notFoundPage: Page = () => {
   return {
@@ -13,8 +13,6 @@ export const notFoundPage: Page = () => {
       
     </div>
     `,
-    init() {
-
-    }
+    init() {},
   };
-}
+};

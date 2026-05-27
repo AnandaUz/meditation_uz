@@ -1,5 +1,5 @@
-import type { Page } from '../types';
-import '@components/top/c-top';
+import type { Page } from "../types";
+import "@/components/c-top/c-top";
 
 export const privacyPolicyPage: Page = () => {
   return {
@@ -32,9 +32,7 @@ export const privacyPolicyPage: Page = () => {
         <p>&copy; 2026 esho.uz</p>
     </div>
     `,
-    init() {
-
-    },
-    title: 'Политика конфиденциальности'
+    init() {},
+    title: "Политика конфиденциальности",
   };
-}
+};

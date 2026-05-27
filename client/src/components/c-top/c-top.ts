@@ -4,9 +4,7 @@ export class CTop extends HTMLElement {
   async connectedCallback() {
     this.innerHTML = `
     <div class="top">
-      <img src="/photo-ananda2.jpg" alt="" fetchpriority="high" loading="eager">
-
-      
+      <img src="/photo-ananda2.jpg" alt="" fetchpriority="high" loading="eager">      
       <div class="b00">
     <!--  
           Саморазвитие • Здоровье • Бизнес
@@ -17,7 +15,7 @@ export class CTop extends HTMLElement {
       <div class="b02">
         <a href="/" class="home_anh">
             <span class="home"></span>
-            <span class="name">АНАНДА ШАДРИН</span>
+            <span class="name">МЕДИТАЦИЯ <span class="city">В ТАШКЕНТЕ</span></span>
         </a>
       </div>
       
