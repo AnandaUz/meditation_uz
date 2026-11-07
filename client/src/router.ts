@@ -57,18 +57,35 @@ export async function render(): Promise<void> {
     const result = await page(params);
     const { html, title, description, noindex, init, pageClass } = result;
     main.innerHTML = html;
-    document.title = title
+    const fullTitle = title
       ? `Медитация в Ташкенте — ${title}`
       : "Медитация в Ташкенте — бесплатные коллективные медитации и йога каждую субботу";
+    const fullDesc =
+      description ||
+      "Медитация в Ташкенте — бесплатные коллективные встречи каждую субботу. Практика медитации для начинающих, асана-класс (йога), расслабление, внутренняя тишина и поддержка единомышленников в Ташкенте.";
+    const cleanPath = path === "/" ? "/" : path.replace(/\/+$/, "");
+    const canonicalUrl = `https://meditation.uz${cleanPath}`;
 
-    const descMeta = document.querySelector('meta[name="description"]');
-    if (descMeta) {
-      descMeta.setAttribute(
-        "content",
-        description ||
-          "Медитация в Ташкенте — бесплатные коллективные встречи каждую субботу. Практика медитации для начинающих, асана-класс (йога), расслабление, внутренняя тишина и поддержка единомышленников в Ташкенте.",
-      );
-    }
+    document.title = fullTitle;
+
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", fullDesc);
+    document
+      .querySelector('meta[property="og:title"]')
+      ?.setAttribute("content", fullTitle);
+    document
+      .querySelector('meta[property="og:description"]')
+      ?.setAttribute("content", fullDesc);
+    document
+      .querySelector('meta[property="og:url"]')
+      ?.setAttribute("content", canonicalUrl);
+    document
+      .querySelector('meta[name="twitter:title"]')
+      ?.setAttribute("content", fullTitle);
+    document
+      .querySelector('meta[name="twitter:description"]')
+      ?.setAttribute("content", fullDesc);
 
     const robotsMeta = document.querySelector('meta[name="robots"]');
     if (robotsMeta) {
@@ -80,8 +97,7 @@ export async function render(): Promise<void> {
 
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
-      const cleanPath = path === "/" ? "/" : path.replace(/\/+$/, "");
-      canonicalLink.setAttribute("href", `https://meditation.uz${cleanPath}`);
+      canonicalLink.setAttribute("href", canonicalUrl);
     }
 
     init?.();
@@ -105,7 +121,8 @@ function scrollToHash() {
 
   // небольшая задержка на случай если DOM ещё не готов
   requestAnimationFrame(() => {
-    const el = document.querySelector(hash);
+    const id = decodeURIComponent(hash.slice(1));
+    const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: "smooth" });
   });
 }

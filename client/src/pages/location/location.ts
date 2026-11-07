@@ -1,4 +1,5 @@
 import type { Page } from "../../types";
+import "../home/home.scss";
 import "./location.scss";
 
 import html from "./location.html?raw";
@@ -10,7 +11,8 @@ export const locationPage: Page = () => {
   return {
     html: html.replaceAll(
       "{{VITE_TGBOT_MEDITATION_URL}}",
-      import.meta.env.VITE_TGBOT_MEDITATION_URL,
+      import.meta.env.VITE_TGBOT_MEDITATION_URL ||
+        "https://t.me/uzmeditation_bot",
     ),
     init() {
       document.querySelectorAll(".btn-maps").forEach((btn) => {

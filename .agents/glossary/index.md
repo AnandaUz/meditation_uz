@@ -10,5 +10,4 @@
 | `!шапка`, `!топ`, `!top`, `!header`, `!footer` | [.agents/glossary/layout.md](file:///d:/_sites/meditation.uz/.agents/glossary/layout.md) |
 | `!аналитика`, `!трекер`, `!админка`, `!analytics` | [.agents/glossary/analytics.md](file:///d:/_sites/meditation.uz/.agents/glossary/analytics.md) |
 | `!главная`, `!локация`, `!страницы`, `!pages` | [.agents/glossary/pages.md](file:///d:/_sites/meditation.uz/.agents/glossary/pages.md) |
-| `!форма`, `!заявка`, `!formMeet` | [.agents/glossary/form-meet.md](file:///d:/_sites/meditation.uz/.agents/glossary/form-meet.md) |
 

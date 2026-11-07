@@ -9,7 +9,8 @@ export const homePage: Page = () => {
   return {
     html: html.replaceAll(
       "{{VITE_TGBOT_MEDITATION_URL}}",
-      import.meta.env.VITE_TGBOT_MEDITATION_URL,
+      import.meta.env.VITE_TGBOT_MEDITATION_URL ||
+        "https://t.me/uzmeditation_bot",
     ),
     init() {
       document.querySelectorAll(".btn-maps").forEach((btn) => {

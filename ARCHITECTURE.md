@@ -3,7 +3,7 @@
 Системная архитектура клиентского SPA-приложения **meditation.uz** — лендинга и информационного портала бесплатных коллективных медитаций и асана-классов в Ташкенте с интеграцией Telegram-бота и сквозной веб-аналитики.
 
 Связанные документы:
-- [.agents/glossary/index.md](file:///d:/_sites/meditation.uz/.agents/glossary/index.md) — терминология доменной модели (`!роутер`, `!видеоплеер`, `!кнопкаБота`, `!аналитика`, `!шапка`, `!страницы`, `!форма`).
+- [.agents/glossary/index.md](file:///d:/_sites/meditation.uz/.agents/glossary/index.md) — терминология доменной модели (`!роутер`, `!видеоплеер`, `!кнопкаБота`, `!аналитика`, `!шапка`, `!страницы`).
 - [docs/PROJECT_CONTEXT.md](file:///d:/_sites/meditation.uz/docs/PROJECT_CONTEXT.md) — компактная выжимка контекста для AI-ассистента.
 - [docs/ANALYSIS_REPORT.md](file:///d:/_sites/meditation.uz/docs/ANALYSIS_REPORT.md) — технический аудит и рекомендации по улучшению.
 
@@ -73,7 +73,6 @@ graph TD
 - **[`CTop`](file:///d:/_sites/meditation.uz/client/src/components/c-top/c-top.ts#L3)** (`<c-top>`): верхняя шапка-герой с фотографией ведущего и плашкой-ссылкой «МЕДИТАЦИЯ В ТАШКЕНТЕ».
 - **[`CAnhToBot`](file:///d:/_sites/meditation.uz/client/src/components/c-anh-to_bot.ts#L1)** (`<c-anh-to_bot>`): конверсионная кнопка перехода в Telegram-бот. Считывает `data-bot-url` (или `VITE_BOT_URL`), `data-attr`, `btn-text`, `data-class`. При клике отправляет цель `guestTrack("goalBtnClick")`, считывает `localStorage.getItem("guestID")` и открывает `${botUrl}?start=${attr}__${guestID}`.
 - **[`CVPlayer`](file:///d:/_sites/meditation.uz/client/src/components/c-v-player/c-v-player.ts#L16)** (`<c-v-player>`): кастомный видеоплеер для вертикального видео (соотношение 14:9). В свёрнутом состоянии показывает превью-постер (`data-poster`). По клику плавно раскрывается (`is-expanded`), доскролливает страницу к началу плеера и запускает видео (`data-src`), отображая прогресс-полоску `.vp-strip` и генерируя события просмотра `vp:start`, `vp:half` (≥50%), `vp:complete` (≥95%).
-- **[`CFormMeet`](file:///d:/_sites/meditation.uz/client/src/components/c-form-meet/c-form-meet.ts#L6)** (`<c-form-meet>`): компонент встроенной формы заявки (имя + контакт в Telegram/телефон) с валидацией полей и дублирующей кнопкой `<c-anh-to_bot>`.
 
 ---
 

@@ -1,20 +1,5 @@
 <div class="main">
-    <div class="top">
-        <img src="/photo-ananda2.jpg" alt="Медитация в Ташкенте — ведущий коллективных практик Ананда" fetchpriority="high" loading="eager">
-        <div class="b00">
-            <!--  
-          Саморазвитие • Здоровье • Бизнес
-          -->
-        </div>
-
-
-        <div class="b02">
-            <a href="/" class="home_anh">
-                <span class="name">МЕДИТАЦИЯ <span class="city">В ТАШКЕНТЕ</span></span>
-            </a>
-        </div>
-
-    </div>
+    <c-top></c-top>
 
 
     <div class="cont">
@@ -80,7 +65,7 @@
             <div>
                 <p><span class="time">9:20</span> знакомство</p>
                 <p><span class="time">9:30</span><strong> йоговские физические упражнения</strong></p>
-                <p><span class="time">10:30</span> короткое объяснение техники медитации и вдохноение на практику</p>
+                <p><span class="time">10:30</span> короткое объяснение техники медитации и вдохновение на практику</p>
                 <p><span class="time">11:00</span> 20 минут динамической медитации</p>
                 <p><span class="time">11:20</span> 20 минут статичной медитации</p>
                 <p><span class="time">11:40</span> коллективное общение на тему практики</p>
@@ -93,7 +78,7 @@
             <h3>Что взять с собой</h3>
 
             <div>
-                <p>Если вы идёте и на асана-класс, то просим взять удобную одеждку для занятий, и коврик для упражнений.
+                <p>Если вы идёте и на асана-класс, то просим взять удобную одежду для занятий и коврик для упражнений.
                 </p>
                 <p>Если только на медитацию, то удобной одежды вполне хватит.</p>
 
@@ -136,8 +121,8 @@
                 <p>Моя цель — вдохновлять людей становиться ещё более счастливыми, как бы пафосно это ни звучало.</p>
             </div>
             <div class="al_center">
-                <a href="https://t.me/ananda_uz" class="ico-telegram" target="_blank"> </a>
-                <a href="https://www.instagram.com/ananda_uz/" class="ico-instagram" target="_blank"> </a>
+                <a href="https://t.me/ananda_uz" class="ico-telegram" target="_blank" aria-label="Telegram"></a>
+                <a href="https://www.instagram.com/ananda_uz/" class="ico-instagram" target="_blank" aria-label="Instagram"></a>
             </div>
 
         </section>
@@ -156,7 +141,7 @@
 
         </section>    
         <section class=" al_center">
-            <c-anh-to_bot data-class="anh-to_bot" data-bot-url="https://t.me/uzmeditation_bot" data-attr="meditation"
+            <c-anh-to_bot data-class="anh-to_bot" data-bot-url="{{VITE_TGBOT_MEDITATION_URL}}" data-attr="meditation"
                 btn-text="Отправить заявку <span class='summary'>через ТГ-бот</span>"></c-anh-to_bot>
             <div class="litte-text"><strong>Бесплатно</strong></div>
 

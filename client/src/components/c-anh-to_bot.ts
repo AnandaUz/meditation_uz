@@ -1,7 +1,9 @@
 export class CAnhToBot extends HTMLElement {
   async connectedCallback() {
     const botUrl =
-      this.getAttribute("data-bot-url") || import.meta.env.VITE_BOT_URL;
+      this.getAttribute("data-bot-url") ||
+      import.meta.env.VITE_TGBOT_MEDITATION_URL ||
+      "https://t.me/uzmeditation_bot";
     const attr = this.getAttribute("data-attr") || "f1";
     const btnText = this.getAttribute("btn-text") || "Отправить";
     const classAttr = this.getAttribute("data-class") || "";

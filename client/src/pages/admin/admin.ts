@@ -1,5 +1,6 @@
 import type { Page } from '../../types';
 import "./admin.scss";
+import "@/components/c-top/c-top";
 
 interface Btn {
   name: string;
@@ -40,15 +41,9 @@ const btns: Btn[] = [
 function getStorageStatus() {
   btns.forEach(btn => {
     const status = localStorage.getItem(btn.storageName);
-    if (status) {
-      btn.isOff = status === 'true';
-      if (btn.isOff) {
-        btn.btnElement?.classList.add('off');
-      } else {
-        btn.btnElement?.classList.remove('off');
-      }
-    }
-  })
+    btn.isOff = status === 'true';
+    btn.btnElement?.classList.toggle('off', btn.isOff);
+  });
   return localStorage.getItem('no_analytics');
 }
 
