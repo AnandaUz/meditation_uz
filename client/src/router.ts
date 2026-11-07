@@ -55,9 +55,35 @@ export async function render(): Promise<void> {
     if (!main) throw new Error("Элемент main не найден в DOM");
 
     const result = await page(params);
-    const { html, title, init, pageClass } = result;
+    const { html, title, description, noindex, init, pageClass } = result;
     main.innerHTML = html;
-    document.title = "Медитация" + (title ? " | " + title : " в Ташкенте");
+    document.title = title
+      ? `Медитация в Ташкенте — ${title}`
+      : "Медитация в Ташкенте — бесплатные коллективные медитации и йога каждую субботу";
+
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) {
+      descMeta.setAttribute(
+        "content",
+        description ||
+          "Медитация в Ташкенте — бесплатные коллективные встречи каждую субботу. Практика медитации для начинающих, асана-класс (йога), расслабление, внутренняя тишина и поддержка единомышленников в Ташкенте.",
+      );
+    }
+
+    const robotsMeta = document.querySelector('meta[name="robots"]');
+    if (robotsMeta) {
+      robotsMeta.setAttribute(
+        "content",
+        noindex ? "noindex, nofollow" : "index, follow",
+      );
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      const cleanPath = path === "/" ? "/" : path.replace(/\/+$/, "");
+      canonicalLink.setAttribute("href", `https://meditation.uz${cleanPath}`);
+    }
+
     init?.();
     document.body.className = "";
     if (pageClass) {

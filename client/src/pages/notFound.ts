@@ -14,5 +14,7 @@ export const notFoundPage: Page = () => {
     </div>
     `,
     init() {},
+    title: "Страница не найдена (404)",
+    noindex: true,
   };
 };

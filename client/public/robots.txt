@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /ad
+Disallow: /settings
+
+Host: https://meditation.uz
+Sitemap: https://meditation.uz/sitemap.xml
+

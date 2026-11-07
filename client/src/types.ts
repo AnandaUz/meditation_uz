@@ -1,6 +1,8 @@
 export type PageResult = {
   html: string;
   title?: string;
+  description?: string;
+  noindex?: boolean;
   init?: () => void;
   pageClass?: string;
 };

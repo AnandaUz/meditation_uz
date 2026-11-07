@@ -12,14 +12,17 @@ export const homePage: Page = () => {
       import.meta.env.VITE_TGBOT_MEDITATION_URL,
     ),
     init() {
-      const btn_maps = document.querySelector(".btn-maps") as HTMLAnchorElement;
-      btn_maps.addEventListener("click", () => {
-        const track = (window as any).guestTrack;
-        if (track) {
-          track("btnMaps");
-        }
+      document.querySelectorAll(".btn-maps").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const track = (window as any).guestTrack;
+          if (track) {
+            track("btnMaps");
+          }
+        });
       });
     },
-    title: "Ташкент",
+    title: "бесплатные коллективные медитации и йога каждую субботу",
+    description:
+      "Медитация в Ташкенте — бесплатные коллективные практики медитации и асана-класс (йога) каждую субботу в 9:20. Обучение медитации для начинающих, снятие стресса и общение с единомышленниками.",
   };
 };

@@ -13,14 +13,17 @@ export const locationPage: Page = () => {
       import.meta.env.VITE_TGBOT_MEDITATION_URL,
     ),
     init() {
-      const btn_maps = document.querySelector(".btn-maps") as HTMLAnchorElement;
-      btn_maps.addEventListener("click", () => {
-        const track = (window as any).guestTrack;
-        if (track) {
-          track("btnMaps");
-        }
+      document.querySelectorAll(".btn-maps").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const track = (window as any).guestTrack;
+          if (track) {
+            track("btnMaps");
+          }
+        });
       });
     },
-    title: "локация",
+    title: "адрес зала, карта проезда и расписание встреч",
+    description:
+      "Где проходит коллективная медитация в Ташкенте: Мирзо-Улугбекский район, 1-й проезд Олмачи, 37 (Eco Art Hotel). Схема проезда на Яндекс и Google Картах, видео-маршрут и расписание по субботам.",
   };
 };

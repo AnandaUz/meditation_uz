@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx vite",
     "build": "tsc && npx vite build",
-    "preview": "npx vite preview"
+    "preview": "npx vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^25.4.0",

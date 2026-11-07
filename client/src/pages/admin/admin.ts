@@ -116,6 +116,7 @@ export const adminPage: Page = () => {
       getStorageStatus();
 
     },
-    title: 'Админ'
+    title: 'Админ',
+    noindex: true
   };
 }
